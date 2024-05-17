@@ -1,4 +1,7 @@
 import sys, func_salary
 
-for i in sys.argv[1:]:
-    func_salary.calcsalary(int(i))
+salary = sys.argv
+
+for i in salary[1:]:
+    payamount, tax =func_salary.calcsalary(int(i))
+    print("給与:{}、支給額:{}、税額:{}".format(i,payamount,tax))
