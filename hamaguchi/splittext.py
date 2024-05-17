@@ -5,6 +5,7 @@ import sys
 指定した位置の単語出力するプログラム
 """
 
+#引数から対象の英文と位置を取得
 texts = sys.argv[1].split(" ")
 idx = int(sys.argv[2])
 
