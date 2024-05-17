@@ -14,7 +14,7 @@ prime_nums = []
 対象の値xが割り続ける限り、対象の値を更新し続けるプログラム。
 
 """
-for i in range(2,x//2+1):
+for i in range(2,x//2+2):
     if x % i != 0:continue
     while x % i == 0:
         prime_nums.append(i) #割り切れた場合prime_numsに登録する。
