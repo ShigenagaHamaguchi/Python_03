@@ -14,17 +14,15 @@ alcohol = ("ビール", "日本酒")                         #酒類をタプル
 noodles = ("ラーメン", "うどん", "パスタ")   #麺類をタプルで定義
 #ここ以降にプログラムを書く
 
+# 対象のカテゴリの商品群を取得
+categories = {"果物類":fruits, "酒類":alcohol, "麺類":noodles}
 
-if(hm_class == "麺類"):
-    kind = noodles
-elif(hm_class == "酒類"):
-    kind = alcohol
-elif(hm_class == "果物類"):
-    kind = fruits
-
-for item in kind:
-    hinmoku[item] -= price_down
-    if(hinmoku[item] < 1):
-        hinmoku[item] = 1
+# 引数で与えられた商品の価格を下げる
+for name in categories[hm_class]:
+    if price_down > hinmoku[name]:
+        hinmoku[name] = 1
+    else:
+        hinmoku[name] -= price_down
 
 print(hinmoku, end="")
+
