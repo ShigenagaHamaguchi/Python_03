@@ -6,6 +6,9 @@ DESCRIBE TABLE attendnum;
 
 SELECT * FROM attendnum;
 
+
+
+
 -- INSERT INTO holiday VALUES
 --     ('2022/01/01', '元日'),
 --     ('2022/01/10', '成人の日'),
