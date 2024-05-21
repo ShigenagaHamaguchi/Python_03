@@ -8,3 +8,6 @@ text = args[1].split()
 
 # n番目の単語の出力
 print(text[int(args[2]) - 1], end="")
+
+
+
