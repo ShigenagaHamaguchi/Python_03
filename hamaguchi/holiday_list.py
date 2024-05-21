@@ -1,16 +1,20 @@
 
 from database import session
 from tables import Holiday
+from attendnum import Attendnum
+from datetime import date
+
+def insert_holiday(day:Holiday):
+    session.add(day)
+    session.commit()
+    return
+
+def get_holidays() ->date:
+    holi_date=session.query(Holiday.holi_date).all()
+    print(holi_date)
+    return list(map(lambda x:x[0],holi_date))
 
 
-holiday0 = Holiday("2024/11/11","生誕祭")
-holiday1 = Holiday("2024/7/15","海の日")
-holiday2 = Holiday("2024/8/11","山の日 ")
-
-session.add(holiday0)
-session.add(holiday1)
-session.add(holiday2)
-session.commit()
-
-holidays = session.query(Holiday).all()
-print(holidays)
+def count_attendnum(day:date):
+    print(session.query(Attendnum).filter_by(entry_date=day).count())
+    return session.query(Attendnum).filter_by(entry_date=day).count()
