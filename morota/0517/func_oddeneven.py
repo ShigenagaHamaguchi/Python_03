@@ -19,6 +19,3 @@ num3 = int(args[3])
 calcvalue(num1)
 calcvalue(num2)
 calcvalue(num3)
-
-# for i in args[1:]
-
